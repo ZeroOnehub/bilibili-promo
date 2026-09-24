@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>哔哩哔哩 bilibili · 你感兴趣的视频都在B站</title>
+    <meta name="description" content="哔哩哔哩（bilibili）产品宣传页 · 课程作业版：弹幕、分区、UP 主、一键三连，带你三分钟看懂 B 站。">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 56'><path d='M20 4l6 8M44 4l-6 8' stroke='%2318191C' stroke-width='5' stroke-linecap='round'/><rect x='4' y='12' width='56' height='40' rx='11' fill='%2300AEEC'/><rect x='11' y='19' width='42' height='26' rx='6' fill='white'/></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- 字体异步加载：加载不到时自动退回系统字体，不会卡住页面 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@500;700&family=Noto+Sans+SC:wght@400;500;700;900&family=ZCOOL+QingKe+HuangYou&display=swap" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 小电视图标，全站复用 -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="tv" viewBox="0 0 64 56">
+        <path d="M20 4l6 8M44 4l-6 8" stroke="currentColor" stroke-width="5" stroke-linecap="round" fill="none"/>
+        <rect x="4" y="12" width="56" height="40" rx="11" fill="currentColor"/>
+        <rect x="11" y="19" width="42" height="26" rx="6" fill="#fff"/>
+        <rect x="21" y="26" width="5" height="9" rx="2.5" fill="#18191C"/>
+        <rect x="38" y="26" width="5" height="9" rx="2.5" fill="#18191C"/>
+        <path d="M26 38.5q3 3 6 0q3 3 6 0" stroke="#18191C" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+    </symbol>
+</svg>
+
+<!-- ========== 顶栏：像视频的分 P 列表 ========== -->
+<header class="topbar" id="topbar">
+    <a class="brand" href="#hero" aria-label="回到开场">
+        <svg class="brand-tv"><use href="#tv"/></svg>
+        <span>bilibili</span>
+    </a>
+    <nav class="p-nav" aria-label="章节">
+        <a href="#danmaku" data-nav="danmaku"><b>P1</b>弹幕</a>
+        <a href="#zones" data-nav="zones"><b>P2</b>分区</a>
+        <a href="#up" data-nav="up"><b>P3</b>UP 主</a>
+        <a href="#history" data-nav="history"><b>P4</b>编年史</a>
+        <a href="#data" data-nav="data"><b>P5</b>数据</a>
+    </nav>
+    <a class="btn btn-pink btn-sm" href="#end">下载 App</a>
+</header>
+
+<main>
+
+<!-- ========== 开场 ========== -->
+<section class="hero" id="hero" data-p="开场" data-title="开场">
+    <div class="dm-stage" id="heroStage" aria-hidden="true"></div>
+
+    <div class="hero-inner">
+        <div class="hero-copy">
+            <p class="tag tag-yellow rv">since 2009 · 中国年轻人的视频社区</p>
+            <h1 class="hero-title rv">
+                <span class="line">你感兴趣的</span>
+                <span class="line">视频都在<em class="b-sticker">B站</em></span>
+            </h1>
+            <p class="hero-sub rv"><span>追番、学知识、看 UP 主、交朋友——在 B 站，看视频从来不是一个人的事。</span></p>
+
+            <form class="dm-send rv" id="dmForm" autocomplete="off">
+                <span class="dm-send-badge" aria-hidden="true">弹</span>
+                <label class="sr-only" for="dmInput">发一条弹幕</label>
+                <input id="dmInput" maxlength="30" placeholder="发条弹幕试试，和大家一起刷屏～">
+                <button type="submit">发送</button>
+            </form>
+
+            <div class="hero-ctas rv">
+                <a class="btn btn-pink" href="#end">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 20h16"/></svg>
+                    下载 App
+                </a>
+                <a class="btn btn-ghost" href="https://www.bilibili.com" target="_blank" rel="noopener">打开网页版 ↗</a>
+            </div>
+        </div>
+
+        <div class="hero-visual rv" aria-hidden="true">
+            <div class="hv-blob"></div>
+            <svg class="hv-ring" viewBox="0 0 400 400">
+                <defs>
+                    <path id="ringPath" d="M200,200 m-168,0 a168,168 0 1,1 336,0 a168,168 0 1,1 -336,0"/>
+                </defs>
+                <circle cx="200" cy="200" r="190" fill="none" stroke="#18191C" stroke-width="2" stroke-dasharray="4 9"/>
+                <text><textPath href="#ringPath" textLength="1045" lengthAdjust="spacing">一键三连 ✦ 前方高能 ✦ 下次一定 ✦ 爷青回 ✦ 干杯 ✦ 名场面 ✦ 泪目 ✦</textPath></text>
+            </svg>
+
+            <svg class="big-tv" id="bigTv" viewBox="0 0 240 214">
+                <path d="M72 12l24 36M168 12l-24 36" stroke="#18191C" stroke-width="12" stroke-linecap="round"/>
+                <rect x="20" y="46" width="200" height="148" rx="36" fill="#00AEEC" stroke="#18191C" stroke-width="6"/>
+                <rect x="44" y="68" width="152" height="104" rx="22" fill="#fff" stroke="#18191C" stroke-width="5"/>
+                <g class="tv-eyes" id="tvEyes">
+                    <rect class="tv-eye" x="80" y="98" width="15" height="28" rx="7.5" fill="#18191C"/>
+                    <rect class="tv-eye" x="145" y="98" width="15" height="28" rx="7.5" fill="#18191C"/>
+                </g>
+                <ellipse cx="70" cy="140" rx="12" ry="6" fill="#FF6699" opacity=".55"/>
+                <ellipse cx="170" cy="140" rx="12" ry="6" fill="#FF6699" opacity=".55"/>
+                <path d="M104 140q8 10 16 0q8 10 16 0" stroke="#18191C" stroke-width="5" stroke-linecap="round" fill="none"/>
+                <rect x="62" y="190" width="28" height="16" rx="7" fill="#18191C"/>
+                <rect x="150" y="190" width="28" height="16" rx="7" fill="#18191C"/>
+            </svg>
+
+            <span class="float-tag ft-1">awsl</span>
+            <span class="float-tag ft-2">(゜-゜)つロ 干杯</span>
+            <span class="float-tag ft-3">一键三连！</span>
+            <span class="float-tag ft-4">UP 主</span>
+        </div>
+    </div>
+
+    <a class="scroll-cue" href="#danmaku">
+        <span>往下滑，开始播放</span>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+    </a>
+</section>
+
+<!-- ========== P1 弹幕 ========== -->
+<section class="chapter" id="danmaku" data-p="P1" data-title="弹幕">
+    <div class="container">
+        <div class="chapter-head rv">
+            <span class="p-badge">P1</span>
+            <span class="timecode" data-timecode="danmaku">00:42</span>
+            <h2>弹幕，一起看<br class="br-sm">才有意思</h2>
+        </div>
+
+        <div class="dm-layout">
+            <div class="player-card rv">
+                <div class="screen" id="sceneScreen">
+                    <svg class="scene" viewBox="0 0 800 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0" stop-color="#1B1340"/>
+                                <stop offset=".48" stop-color="#4B2A7B"/>
+                                <stop offset=".82" stop-color="#FF6699"/>
+                                <stop offset="1" stop-color="#FFB36B"/>
+                            </linearGradient>
+                            <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0" stop-color="#FFE08A"/>
+                                <stop offset="1" stop-color="#FF7FA8"/>
+                            </linearGradient>
+                        </defs>
+                        <rect width="800" height="450" fill="url(#sky)"/>
+                        <g class="stars" fill="#fff">
+                            <circle cx="80" cy="60" r="2"/><circle cx="190" cy="110" r="1.5"/><circle cx="300" cy="40" r="2.2"/>
+                            <circle cx="420" cy="90" r="1.4"/><circle cx="520" cy="50" r="2"/><circle cx="660" cy="80" r="1.6"/>
+                            <circle cx="740" cy="40" r="2"/><circle cx="130" cy="170" r="1.3"/><circle cx="700" cy="160" r="1.4"/>
+                        </g>
+                        <circle cx="560" cy="318" r="104" fill="url(#sun)"/>
+                        <g fill="#FF6699">
+                            <rect x="440" y="318" width="240" height="7"/>
+                            <rect x="440" y="340" width="240" height="9"/>
+                            <rect x="440" y="364" width="240" height="11"/>
+                        </g>
+                        <path d="M0 330 L120 250 L210 300 L330 210 L450 300 L540 262 L660 320 L800 250 L800 450 L0 450Z" fill="#3A1F63"/>
+                        <path d="M0 390 Q200 330 400 372 T800 350 L800 450 L0 450Z" fill="#24123F"/>
+                        <g fill="#140A26">
+                            <circle cx="300" cy="318" r="10"/>
+                            <rect x="290" y="328" width="20" height="36" rx="9"/>
+                            <circle cx="336" cy="322" r="9"/>
+                            <rect x="327" y="331" width="18" height="33" rx="8"/>
+                        </g>
+                    </svg>
+                    <div class="energy-banner" id="energyBanner">⚠ 前方高能预警</div>
+                    <div class="dm-stage dm-stage-scene" id="sceneStage" aria-hidden="true"></div>
+                    <p class="subtitle">「这一幕，我等了整整十二集。」</p>
+                </div>
+                <div class="controls">
+                    <svg class="ctl-play" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1.2" fill="currentColor"/><rect x="14" y="5" width="4" height="14" rx="1.2" fill="currentColor"/></svg>
+                    <div class="ctl-bar">
+                        <svg class="ctl-energy" viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true">
+                            <path d="M0 24 L0 20 C20 20 30 14 45 16 S70 22 90 18 S120 6 140 10 S165 21 185 17 S205 2 225 4 S250 18 270 15 S290 20 300 19 L300 24Z"/>
+                        </svg>
+                        <div class="ctl-track"><div class="ctl-fill"></div><svg class="ctl-knob"><use href="#tv"/></svg></div>
+                    </div>
+                    <span class="ctl-time">12:34 / 23:40</span>
+                    <button class="dm-toggle" data-dm-toggle aria-pressed="true" title="弹幕开关">弹</button>
+                </div>
+            </div>
+
+            <div class="dm-copy">
+                <p class="lead rv">弹幕会跟着视频的时间点飘过屏幕——哪怕视频是三年前上传的，你也能看到无数人在同一秒和你一起笑、一起哭。</p>
+                <ul class="points">
+                    <li class="rv"><span class="pt-ico pt-pink">弹</span><div><h3>实时弹幕</h3><p>看到哪儿说到哪儿，评论直接贴在画面上。</p></div></li>
+                    <li class="rv"><span class="pt-ico pt-blue">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18c3 0 3-8 6-8s3 5 6 5 3-11 6-11"/></svg>
+                    </span><div><h3>高能进度条</h3><p>弹幕越密的地方波峰越高，一眼找到名场面。</p></div></li>
+                    <li class="rv"><span class="pt-ico pt-yellow">礼</span><div><h3>弹幕礼仪</h3><p>不剧透、不刷屏，是社区一起维护的默契。</p></div></li>
+                </ul>
+                <p class="hint rv">👉 点播放器右下角的「弹」，关掉弹幕感受一下区别</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== P2 分区 ========== -->
+<section class="chapter chapter-zones" id="zones" data-p="P2" data-title="分区">
+    <div class="container">
+        <div class="chapter-head rv">
+            <span class="p-badge">P2</span>
+            <span class="timecode" data-timecode="zones">01:36</span>
+            <h2>万物皆可 B 站</h2>
+        </div>
+        <p class="chapter-sub rv">从二次元起家，到今天什么都能在 B 站找到：想学的、想看的、想一起疯的。</p>
+    </div>
+
+    <div class="tapes" aria-hidden="true">
+        <div class="tape tape-ink"><div class="tape-track">
+            <span>动画 ✦ 番剧 ✦ 国创 ✦ 音乐 ✦ 舞蹈 ✦ 游戏 ✦ 知识 ✦ 科技 ✦&nbsp;</span>
+            <span>动画 ✦ 番剧 ✦ 国创 ✦ 音乐 ✦ 舞蹈 ✦ 游戏 ✦ 知识 ✦ 科技 ✦&nbsp;</span>
+        </div></div>
+        <div class="tape tape-yellow"><div class="tape-track reverse">
+            <span>美食 ✦ 动物圈 ✦ 鬼畜 ✦ 运动 ✦ 汽车 ✦ 生活 ✦ 时尚 ✦ 影视 ✦&nbsp;</span>
+            <span>美食 ✦ 动物圈 ✦ 鬼畜 ✦ 运动 ✦ 汽车 ✦ 生活 ✦ 时尚 ✦ 影视 ✦&nbsp;</span>
+        </div></div>
+    </div>
+
+    <div class="container">
+        <div class="sticker-wall">
+            <article class="zone z-pink rv" style="--r:-3deg"><span class="z-emoji">📺</span><h3>番剧</h3><p>新番更新的那一刻，满屏都是同好的尖叫</p></article>
+            <article class="zone z-white rv" style="--r:2deg"><span class="z-emoji">🎓</span><h3>知识</h3><p>一所没有围墙的大学，UP 主讲得比课本还清楚</p></article>
+            <article class="zone z-blue rv" style="--r:-1.5deg"><span class="z-emoji">🎮</span><h3>游戏</h3><p>开黑之前先来做功课，攻略、实况、赛事都有</p></article>
+            <article class="zone z-yellow rv" style="--r:2.5deg"><span class="z-emoji">🎤</span><h3>音乐</h3><p>翻唱、原创、演奏，还有永远刷不完的神曲</p></article>
+            <article class="zone z-blue rv" style="--r:1.5deg"><span class="z-emoji">💃</span><h3>舞蹈</h3><p>宅舞、街舞、国风舞，一个比一个能跳</p></article>
+            <article class="zone z-yellow rv" style="--r:-2deg"><span class="z-emoji">🔧</span><h3>科技</h3><p>数码开箱、硬核拆解，买之前先看一眼</p></article>
+            <article class="zone z-pink rv" style="--r:3deg"><span class="z-emoji">🐱</span><h3>动物圈</h3><p>猫猫狗狗治愈一切，看完心情就好了</p></article>
+            <article class="zone z-white rv" style="--r:-2.5deg"><span class="z-emoji">🍜</span><h3>美食</h3><p>深夜慎点，看完一定会饿</p></article>
+            <article class="zone z-yellow rv" style="--r:1deg"><span class="z-emoji">🌀</span><h3>鬼畜</h3><p>全站最魔性的地方，一听就上头</p></article>
+            <article class="zone z-white rv" style="--r:-1deg"><span class="z-emoji">🎬</span><h3>影视</h3><p>电影解说、剧集混剪，三分钟看完一部片</p></article>
+            <article class="zone z-blue rv" style="--r:2deg"><span class="z-emoji">⚽</span><h3>运动</h3><p>健身跟练、赛事集锦，一起动起来</p></article>
+            <article class="zone z-pink rv" style="--r:-3deg"><span class="z-emoji">📷</span><h3>生活</h3><p>Vlog、日常、手工，普通人的生活也很好看</p></article>
+        </div>
+    </div>
+</section>
+
+<!-- ========== P3 UP 主 ========== -->
+<section class="chapter" id="up" data-p="P3" data-title="UP 主">
+    <div class="container">
+        <div class="chapter-head rv">
+            <span class="p-badge">P3</span>
+            <span class="timecode" data-timecode="up">02:30</span>
+            <h2>每个人都可以<br class="br-sm">是 UP 主</h2>
+        </div>
+
+        <div class="up-layout">
+            <ol class="steps">
+                <li class="step rv"><span class="step-no">01</span><div><h3>拍</h3><p>一部手机就能开始：记录生活、分享技能、表达态度。</p></div></li>
+                <li class="step rv"><span class="step-no">02</span><div><h3>剪</h3><p>用官方剪辑工具「必剪」加字幕、配乐、做转场。</p></div></li>
+                <li class="step rv"><span class="step-no">03</span><div><h3>投</h3><p>选分区、写标题、打标签，点一下「投稿」。</p></div></li>
+                <li class="step rv"><span class="step-no">04</span><div><h3>被看见</h3><p>播放、弹幕、三连……从零粉丝到百万粉丝，都从第一个视频开始。</p></div></li>
+            </ol>
+
+            <div class="video-card rv" id="videoCard">
+                <div class="cover" aria-hidden="true">
+                    <div class="cover-art"></div>
+                    <span class="cover-play">
+                        <svg viewBox="0 0 24 24" width="30" height="30"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>
+                    </span>
+                    <span class="cover-dur">08:24</span>
+                    <span class="cover-dm">弹幕：UP 主加油！！</span>
+                </div>
+                <div class="vc-body">
+                    <h3 class="vc-title">【新人 UP】第一次投稿，紧张到手抖，求三连！</h3>
+                    <p class="vc-meta"><span>小明的日常</span><span>▶ 1.2万</span><span>弹 386</span></p>
+                    <div class="actions" id="actions">
+                        <button class="act" data-act="like" aria-pressed="false" aria-label="点赞">
+                            <svg class="ring" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="23"/></svg>
+                            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10.5V20H4.5A1.5 1.5 0 0 1 3 18.5v-6.5A1.5 1.5 0 0 1 4.5 10.5H7zm2 9.5h8.1a2 2 0 0 0 2-1.6l1.3-6.4A2 2 0 0 0 18.4 9.6H14l.7-3.4A1.9 1.9 0 0 0 12.9 4L9 10.2V20z" fill="currentColor"/></svg>
+                            <span class="n">2333</span>
+                        </button>
+                        <button class="act" data-act="coin" aria-pressed="false" aria-label="投币">
+                            <svg class="ring" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="23"/></svg>
+                            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M9.5 8h3.3a2 2 0 0 1 0 4H9.5zm0 4h3.8a2 2 0 0 1 0 4H9.5zM9.5 8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+                            <span class="n">666</span>
+                        </button>
+                        <button class="act" data-act="fav" aria-pressed="false" aria-label="收藏">
+                            <svg class="ring" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="23"/></svg>
+                            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.8l-5.2 2.7 1-5.8-4.2-4.1 5.8-.8z" fill="currentColor"/></svg>
+                            <span class="n">520</span>
+                        </button>
+                        <button class="act act-share" aria-label="分享">
+                            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 5l6 6-6 6v-3.5c-5 0-8 1.5-10 5 .5-5.5 3.5-9.5 10-10.2V5z" fill="currentColor"/></svg>
+                            <span class="n">分享</span>
+                        </button>
+                    </div>
+                    <div class="sanlian-hint">
+                        <span>👆 长按「点赞」1 秒，试试一键三连</span>
+                        <button class="btn-mini" id="sanlianBtn" type="button">⚡ 直接三连</button>
+                    </div>
+                </div>
+                <div class="toast" id="toast" role="status" aria-live="polite"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== P4 编年史（横向滚动） ========== -->
+<section class="chapter chapter-history" id="history" data-p="P4" data-title="编年史">
+    <div class="tl-pin" id="tlPin">
+        <div class="tl-sticky">
+            <div class="container">
+                <div class="chapter-head rv">
+                    <span class="p-badge">P4</span>
+                    <span class="timecode" data-timecode="history">03:24</span>
+                    <h2>从 2009 到现在</h2>
+                </div>
+            </div>
+            <div class="tl-viewport">
+                <div class="tl-track" id="tlTrack">
+                    <article class="tl-item tl-pink"><span class="tl-year">2009</span><h3>一个给初音粉丝的小站</h3><p>前身 Mikufans 上线，最早是 ACG 爱好者的弹幕视频站。</p></article>
+                    <article class="tl-item tl-white"><span class="tl-year">2010</span><h3>正式改名 bilibili</h3><p>「哔哩哔哩」这个名字从这一年开始被叫响。</p></article>
+                    <article class="tl-item tl-blue"><span class="tl-year">2013</span><h3>第一届 BML</h3><p>Bilibili Macro Link 线下演唱会开办，二次元走到了线下。</p></article>
+                    <article class="tl-item tl-yellow"><span class="tl-year">2018</span><h3>美国纳斯达克上市</h3><p>从小众社区，变成一家上市公司。</p></article>
+                    <article class="tl-item tl-white"><span class="tl-year">2019</span><h3>「最美的夜」出圈</h3><p>跨年晚会被全网刷屏，很多人第一次认真打量 B 站。</p></article>
+                    <article class="tl-item tl-pink"><span class="tl-year">2020</span><h3>《后浪》</h3><p>五四青年节的演讲视频，把「年轻人」三个字说成了全网话题。</p></article>
+                    <article class="tl-item tl-blue"><span class="tl-year">2021</span><h3>香港二次上市</h3><p>回到家门口的资本市场。</p></article>
+                    <article class="tl-item tl-ink"><span class="tl-year">今天</span><h3>下一个名场面</h3><p>也许就在你的下一次投稿里。</p></article>
+                </div>
+            </div>
+            <p class="tl-note container">按公开资料整理</p>
+        </div>
+    </div>
+</section>
+
+<!-- ========== P5 数据 ========== -->
+<section class="chapter" id="data" data-p="P5" data-title="数据">
+    <div class="container">
+        <div class="chapter-head rv">
+            <span class="p-badge">P5</span>
+            <span class="timecode" data-timecode="data">04:10</span>
+            <h2>用数据说话</h2>
+        </div>
+        <div class="data-grid" id="dataGrid">
+            <div class="stat s-pink rv"><div class="stat-num"><span data-count="3.4">0</span><em>亿+</em></div><p>月活跃用户</p></div>
+            <div class="stat s-blue rv"><div class="stat-num"><span data-count="1">0</span><em>亿+</em></div><p>日活跃用户</p></div>
+            <div class="stat s-yellow rv"><div class="stat-num"><span data-count="300">0</span><em>万+</em></div><p>月活 UP 主</p></div>
+            <div class="stat s-ink rv"><div class="stat-num"><span data-count="41">0</span><em>亿+</em></div><p>日均视频播放</p></div>
+        </div>
+        <p class="source rv">数据来源：哔哩哔哩公开财报（约数，仅作课程展示）</p>
+    </div>
+</section>
+
+<!-- ========== 片尾 ========== -->
+<section class="endcard" id="end" data-p="片尾" data-title="片尾">
+    <div class="dm-stage" id="endStage" aria-hidden="true"></div>
+    <div class="container end-inner">
+        <p class="cheers rv"><span class="cheers-face">(゜-゜)</span><span class="cheers-cup">つロ</span> 干杯~</p>
+        <h2 class="end-title rv">感谢观看！<br>剩下的精彩，<br class="br-sm">去 B 站看</h2>
+        <div class="end-ctas rv">
+            <a class="btn btn-pink" href="https://app.bilibili.com" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M16.4 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.2-2.8.9-3.5.9-.7 0-1.9-.8-3.1-.8-1.6 0-3.1 1-3.9 2.4-1.7 2.9-.4 7.2 1.2 9.6.8 1.1 1.7 2.4 3 2.4 1.2-.1 1.6-.8 3.1-.8 1.4 0 1.8.8 3.1.8 1.3 0 2.1-1.2 2.9-2.3.9-1.3 1.3-2.6 1.3-2.7 0 0-2.6-1-2.7-4.2zM14.1 5.8c.6-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.4-.6.7-1.1 1.8-1 2.9 1.1.1 2.1-.6 2.8-1.3z"/></svg>
+                iPhone 下载
+            </a>
+            <a class="btn btn-blue" href="https://app.bilibili.com" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.5 9.3l1.7-2.9a.5.5 0 0 0-.9-.5l-1.7 3a10.6 10.6 0 0 0-9.2 0l-1.7-3a.5.5 0 0 0-.9.5l1.7 2.9A9.4 9.4 0 0 0 2 16.8h20a9.4 9.4 0 0 0-4.5-7.5zM7.5 14.2a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm9 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/></svg>
+                Android 下载
+            </a>
+            <a class="btn btn-ghost-light" href="https://www.bilibili.com" target="_blank" rel="noopener">打开网页版 ↗</a>
+        </div>
+        <p class="end-note rv">喜欢这支「视频」的话，记得一键三连 (￣▽￣)ノ</p>
+    </div>
+</section>
+
+</main>
+
+<footer class="footer">
+    <div class="container footer-inner">
+        <a class="brand brand-light" href="#hero"><svg class="brand-tv"><use href="#tv"/></svg><span>bilibili</span></a>
+        <p>本页面为课程作业展示用途，非哔哩哔哩官方网站。品牌名称与标识归哔哩哔哩所有。</p>
+    </div>
+</footer>
+
+<!-- ========== 底部播放器：整页就是一支视频 ========== -->
+<div class="player-bar" id="playerBar">
+    <button class="pb-play" id="pbPlay" type="button" aria-label="自动播放页面" aria-pressed="false">
+        <svg class="i-play" viewBox="0 0 24 24" width="22" height="22"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>
+        <svg class="i-pause" viewBox="0 0 24 24" width="22" height="22"><rect x="6" y="5" width="4" height="14" rx="1.2" fill="currentColor"/><rect x="14" y="5" width="4" height="14" rx="1.2" fill="currentColor"/></svg>
+    </button>
+    <span class="pb-time"><span id="pbCur">00:00</span><i>/</i><span id="pbTotal">05:20</span></span>
+    <div class="pb-bar" id="pbBar" role="slider" tabindex="0" aria-label="页面进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <svg class="pb-energy" id="pbEnergy" viewBox="0 0 1000 40" preserveAspectRatio="none" aria-hidden="true"><path/></svg>
+        <div class="pb-segs" id="pbSegs"></div>
+        <svg class="pb-knob" id="pbKnob" aria-hidden="true"><use href="#tv"/></svg>
+        <span class="pb-tip" id="pbTip"></span>
+    </div>
+    <span class="pb-chapter" id="pbChapter">开场</span>
+    <button class="pb-dm dm-toggle" data-dm-toggle type="button" aria-pressed="true" title="弹幕开关">弹</button>
+    <span class="pb-quality">1080P 高码率</span>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
