@@ -4,10 +4,10 @@
 
 **「整页就是一支 B 站视频」：滚动就是播放，章节就是分 P，还能发弹幕、一键三连。**
 
-### 👉 [点这里打开在线预览：https://fanye658.github.io/bilibili-promo/](https://fanye658.github.io/bilibili-promo/) 👈
+### 👉 [点这里打开在线预览：https://zeroonehub.github.io/bilibili-promo/](https://zeroonehub.github.io/bilibili-promo/) 👈
 
-[![在线预览](https://img.shields.io/badge/在线预览-点击打开-FF6699?style=for-the-badge&logo=bilibili&logoColor=white)](https://fanye658.github.io/bilibili-promo/)
-[![GitHub 仓库](https://img.shields.io/badge/GitHub-源码-18191C?style=for-the-badge&logo=github)](https://github.com/fanye658/bilibili-promo)
+[![在线预览](https://img.shields.io/badge/在线预览-点击打开-FF6699?style=for-the-badge&logo=bilibili&logoColor=white)](https://zeroonehub.github.io/bilibili-promo/)
+[![GitHub 仓库](https://img.shields.io/badge/GitHub-源码-18191C?style=for-the-badge&logo=github)](https://github.com/ZeroOnehub/bilibili-promo)
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
@@ -56,8 +56,8 @@
 
 | 方式 | 地址 |
 | --- | --- |
-| 🔗 在线访问（推荐） | **<https://fanye658.github.io/bilibili-promo/>** |
-| 💻 源码仓库 | <https://github.com/fanye658/bilibili-promo> |
+| 🔗 在线访问（推荐） | **<https://zeroonehub.github.io/bilibili-promo/>** |
+| 💻 源码仓库 | <https://github.com/ZeroOnehub/bilibili-promo> |
 
 > 💡 建议使用电脑浏览器打开，体验完整的鼠标跟随、横向滚动等效果；手机上也做了适配，可以直接扫码或点链接查看。
 
@@ -167,7 +167,7 @@ bilibili-promo/
 **方式一：直接打开**
 
 ```bash
-git clone https://github.com/fanye658/bilibili-promo.git
+git clone https://github.com/ZeroOnehub/bilibili-promo.git
 cd bilibili-promo
 # 双击 index.html，或：
 open index.html        # macOS
@@ -194,7 +194,7 @@ npx serve .
 1. 打开仓库 **Settings → Pages**；
 2. **Source** 选择 `Deploy from a branch`；
 3. **Branch** 选择 `main`（或存放页面的分支），目录选 `/ (root)`，点 **Save**；
-4. 等待一两分钟，页面会发布到：**<https://fanye658.github.io/bilibili-promo/>**
+4. 等待一两分钟，页面会发布到：**<https://zeroonehub.github.io/bilibili-promo/>**
 
 > 如果 fork 了本项目，地址会变为 `https://<你的用户名>.github.io/bilibili-promo/`。
 
@@ -233,6 +233,6 @@ npx serve .
 
 **喜欢的话，记得一键三连 (￣▽￣)ノ**
 
-### [👉 立即打开在线预览](https://fanye658.github.io/bilibili-promo/)
+### [👉 立即打开在线预览](https://zeroonehub.github.io/bilibili-promo/)
 
 </div>
