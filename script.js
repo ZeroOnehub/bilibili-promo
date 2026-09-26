@@ -395,7 +395,7 @@
             pageBtns.forEach(function (b) { b.setAttribute('aria-pressed', String(pageState[b.getAttribute('data-page-act')])); });
         };
         var celebrate = function (already) {
-            endThanks.textContent = already ? '已经三连过啦，谢谢你 (´▽`ʃ♡ƪ)' : '三连成功！做这一页的同学收到了 (´;ω;｀)';
+            endThanks.textContent = already ? '已经三连过啦，谢谢你 (´▽`ʃ♡ƪ)' : '三连成功！这一页的作者收到了 (´;ω;｀)';
             endFlood(['三连了！', '已三连', '一键三连！', '感谢 UP 主', '下次还来', '好评！'], 10);
         };
         var pagePress = 0, pageFired = false, likeB = $('[data-page-act="like"]', endActs);
